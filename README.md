@@ -48,6 +48,8 @@ query_result = pg_nossh.query(db='your_db_name',
 
 ```python
 
+from variousconnector import snowflake_connector
+
 snowflake_credential = {
         'account':'XXXX',
         'user':'XXXX',
