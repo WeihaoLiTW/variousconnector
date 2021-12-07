@@ -1,5 +1,4 @@
 
-from variousconnector import (
-    postgresql
+from variousconnector.postgresql import (
+    postgresql_connector
     )
-

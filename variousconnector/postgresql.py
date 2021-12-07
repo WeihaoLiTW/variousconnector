@@ -9,7 +9,7 @@ from sshtunnel import SSHTunnelForwarder
 from sqlalchemy import create_engine
 import pandas as pd
 
-class postgresql(object):
+class postgresql_connector:
     def __init__(self, credential):
         try:
             self.pgres_host = credential['host']
@@ -22,7 +22,7 @@ class postgresql(object):
                 self.ssh_user = credential['ssh_user']
                 self.ssh_password = credential['ssh_pwd']
         except:
-            credential_example = {'host':'bluex...us-west-2.rds.amazonaws.com',
+            credential_example = {'host':'....us-west-2.rds.amazonaws.com',
                                   'port':'5432',
                                   'user':'pg user_name',
                                   'pwd':'pg password',
@@ -31,9 +31,10 @@ class postgresql(object):
                                   'ssh_user':'ssh user name (not require if ssh_enable is False)',
                                   'ssh_pwd':'ssh pwd (not require if ssh_enable is False)'
                                   }
-            print(f"credential format is not correct, here is an example: \n"
-                  f"{credential_example}"
-                 )
+            raise ValueError(f"credential format is incorrect \n"
+                             f"here is an example: \n"
+                             f"{credential_example}"
+                             )
             
         self.server = SSHTunnelForwarder(
             (self.ssh_host, 22),

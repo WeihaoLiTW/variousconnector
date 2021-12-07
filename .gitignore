@@ -1,3 +1,6 @@
 ﻿_test
 *.bak
 setup.py
+dist
+*__pycache__*
+variousconnector.egg-info
