@@ -64,9 +64,9 @@ query = '''
     from table_name
     '''
 
-query_result = pg_nossh.query(db='your_db_name',
-                              query=query
-                              )
+query_result = sw.query(db='your_db_name',
+                        query=query
+                        )
 
 '''
 how to know my snowflake account?
