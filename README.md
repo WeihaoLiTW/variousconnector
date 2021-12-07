@@ -3,6 +3,7 @@ handy tools to connect the various data sources
 
 ## What are the Key Features?
 1. Support PostgreSQL with SSH functionality.
+2. Support Snowflake
 	
 ## How to Install?
 
